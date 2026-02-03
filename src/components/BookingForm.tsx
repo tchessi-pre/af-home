@@ -53,9 +53,20 @@ const BookingForm = () => {
       return;
     }
 
+    // WhatsApp Redirection
+    const phoneNumber = import.meta.env.VITE_WHATSAPP_NUMBER;
+    const message = `*Nouvelle demande de réservation*\n\n` +
+      `👤 *Nom:* ${formData.name}\n` +
+      `📱 *Téléphone:* ${formData.phone}\n` +
+      `📍 *Ville:* ${formData.city}\n` +
+      `📦 *Marchandise:* ${formData.merchandise}\n` +
+      `📅 *Date:* ${formData.date}`;
+    
+    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+
     toast({
-      title: "Réservation envoyée !",
-      description: "Notre équipe vous contactera sous 24h pour confirmer votre envoi.",
+      title: "Redirection vers WhatsApp",
+      description: "Votre demande a été pré-remplie dans WhatsApp.",
     });
 
     // Reset form

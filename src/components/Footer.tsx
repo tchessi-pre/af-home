@@ -54,7 +54,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Phone className="w-4 h-4 text-accent" />
-                <span>+33 6 12 34 56 78</span>
+                <span>{import.meta.env.VITE_PHONE_DISPLAY}</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Mail className="w-4 h-4 text-accent" />
