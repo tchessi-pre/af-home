@@ -1,6 +1,5 @@
 {
 	"name": "af-home-services",
-	"homepage": "https://tchessi-pre.github.io/af-home/",
 	"private": true,
 	"version": "0.0.0",
 	"type": "module",
@@ -11,9 +10,7 @@
 		"lint": "eslint .",
 		"preview": "vite preview",
 		"test": "vitest run",
-		"test:watch": "vitest",
-		"predeploy": "pnpm run build",
-		"deploy": "gh-pages -d dist"
+		"test:watch": "vitest"
 	},
 	"dependencies": {
 		"@hookform/resolvers": "^3.10.0",
