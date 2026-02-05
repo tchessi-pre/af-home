@@ -80,7 +80,7 @@ const Navbar = () => {
               <Ship className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
               <Plane className="w-3 h-3 lg:w-4 lg:h-4 text-white absolute -top-1 -right-1 rotate-45" />
             </div>
-            <div className="hidden sm:block">
+            <div className="block">
               <span className={`text-lg lg:text-xl font-display font-bold tracking-tight transition-colors ${isScrolled ? "text-primary" : "text-primary-foreground"}`}>
                 AF HOME
               </span>
@@ -115,10 +115,10 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
             <a
-              href="tel:+33600000000"
+              href={`tel:+${import.meta.env.VITE_WHATSAPP_NUMBER}`}
               className={`text-sm font-medium transition-colors ${isScrolled ? "text-primary/70 hover:text-primary" : "text-primary-foreground/70 hover:text-primary-foreground"}`}
             >
-              +33 6 00 00 00 00
+              {import.meta.env.VITE_PHONE_DISPLAY}
             </a>
             <Button
               asChild
@@ -164,10 +164,10 @@ const Navbar = () => {
               ))}
               <div className={`pt-2 mt-2 border-t ${isScrolled ? "border-primary/10" : "border-primary-foreground/10"}`}>
                 <a
-                  href="tel:+33600000000"
+                  href={`tel:+${import.meta.env.VITE_WHATSAPP_NUMBER}`}
                   className={`block px-4 py-3 text-base font-medium ${isScrolled ? "text-primary/70" : "text-primary-foreground/70"}`}
                 >
-                  📞 +33 6 00 00 00 00
+                  📞 {import.meta.env.VITE_PHONE_DISPLAY}
                 </a>
                 <Button
                   asChild

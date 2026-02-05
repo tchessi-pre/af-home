@@ -1,4 +1,5 @@
 import { Ship, Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -101,8 +102,8 @@ const Footer = () => {
             © 2025 AF HOME Services. Tous droits réservés.
           </p>
           <div className="flex gap-6 text-sm text-primary-foreground/50">
-            <a href="#" className="hover:text-accent transition-colors">Mentions légales</a>
-            <a href="#" className="hover:text-accent transition-colors">CGV</a>
+            <Link to="/mentions-legales" className="hover:text-accent transition-colors">Mentions légales</Link>
+            <Link to="/cgu" className="hover:text-accent transition-colors">CGV</Link>
           </div>
         </div>
       </div>
