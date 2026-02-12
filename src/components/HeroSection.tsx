@@ -11,7 +11,7 @@ interface HeroSectionProps {
 // Prochains départs (à mettre à jour régulièrement)
 const nextDepartures = {
   maritime: { date: "15 Février 2026", destination: "Lomé", delai: "15-20 jours" },
-  aerien: { date: "8 Février 2026", destination: "Lomé", delai: "3-5 jours" },
+  aerien: { date: "Départs quotidiens", destination: "France / Belgique / Suisse", delai: "48h - 72h" },
 };
 
 const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
@@ -92,8 +92,8 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                 <button
                   onClick={() => setActiveMode("maritime")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition-all ${activeMode === "maritime"
-                      ? "bg-accent text-accent-foreground shadow-orange"
-                      : "bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
+                    ? "bg-accent text-accent-foreground shadow-orange"
+                    : "bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
                     }`}
                 >
                   <Ship className="w-4 h-4" />
@@ -102,8 +102,8 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                 <button
                   onClick={() => setActiveMode("aerien")}
                   className={`flex items-center gap-2 px-4 py-2 rounded-full font-semibold transition-all ${activeMode === "aerien"
-                      ? "bg-accent text-accent-foreground shadow-orange"
-                      : "bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
+                    ? "bg-accent text-accent-foreground shadow-orange"
+                    : "bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20"
                     }`}
                 >
                   <Plane className="w-4 h-4" />
@@ -212,7 +212,8 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                           </h3>
                         </div>
                         <p className="text-white/90 text-sm sm:text-base text-center">
-                          Livraison express pour vos envois urgents
+                          Lomé → France / Belgique / Suisse (72h)<br />
+                          <span className="text-accent font-bold">Colis Express Lomé → France (48h)</span>
                         </p>
                       </div>
                       <div className="w-full bg-black/50 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
@@ -267,11 +268,11 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
             <div key={idx} className="flex gap-4 sm:gap-8">
               <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full">
                 <Ship className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
-                <span className="text-primary-foreground font-medium text-sm sm:text-base">Paris → Lomé</span>
+                <span className="text-primary-foreground font-medium text-sm sm:text-base">France ↔ Lomé</span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full">
                 <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
-                <span className="text-primary-foreground font-medium text-sm sm:text-base">Fret Aérien Express</span>
+                <span className="text-primary-foreground font-medium text-sm sm:text-base">Fret Aérien Express (48h/72h)</span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full">
                 <Ship className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
@@ -279,7 +280,7 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
               </div>
               <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full">
                 <Plane className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
-                <span className="text-primary-foreground font-medium text-sm sm:text-base">Livraison 3-5 jours</span>
+                <span className="text-primary-foreground font-medium text-sm sm:text-base">Lomé → France / Be / Ch</span>
               </div>
               <div className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-primary-foreground/10 backdrop-blur-sm rounded-full">
                 <Ship className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />

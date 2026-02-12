@@ -33,21 +33,21 @@ const MentionsLegales = () => {
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">1. Éditeur du site</h2>
             <p className="text-muted-foreground leading-relaxed">
               Le site AF HOME Services est édité par :<br />
-              <strong>AF HOME Services</strong><br />
-              Société par actions simplifiée (SAS)<br />
-              Capital social : [À compléter]<br />
-              Siège social : Paris, France<br />
-              RCS Paris : [À compléter]<br />
-              SIRET : [À compléter]<br />
-              Numéro TVA intracommunautaire : [À compléter]
+              <strong>AF HOME SERVICES</strong><br />
+              Société à responsabilité limitée (SARL)<br />
+              Capital social : 1 300,00 €<br />
+              Siège social : 36 Le Gué 35530 SERVON-SUR-VILAINE<br />
+              RCS Rennes : 993 264 894<br />
+              SIRET : 993 264 894 00011<br />
+              Numéro TVA intracommunautaire : FR90993264894
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">2. Directeur de la publication</h2>
             <p className="text-muted-foreground leading-relaxed">
-              [Nom du directeur de publication]<br />
-              En qualité de Président
+              Monsieur ALOWANOU Foly Fiacre<br />
+              En qualité de Gérant
             </p>
           </section>
 
@@ -64,7 +64,7 @@ const MentionsLegales = () => {
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">4. Contact</h2>
             <p className="text-muted-foreground leading-relaxed">
               Email : contact@afhome-services.com<br />
-              Téléphone : +33 6 12 34 56 78
+              Téléphone : {import.meta.env.VITE_PHONE_DISPLAY}
             </p>
           </section>
 
@@ -81,9 +81,14 @@ const MentionsLegales = () => {
           <section className="mb-10">
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">6. Données personnelles</h2>
             <p className="text-muted-foreground leading-relaxed">
+              AF HOME Services ne stocke aucune donnée personnelle sur ce site internet. Le site fonctionne sans base de données utilisateur.
+              <br /><br />
+              Les échanges et la transmission d'informations pour les devis et les commandes s'effectuent directement via WhatsApp ou par email.
+              Les données communiquées par ces canaux sont utilisées uniquement dans le cadre de la relation commerciale (établissement de devis, facturation, suivi de transport).
+              <br /><br />
               Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès,
-              de rectification, de suppression et de portabilité de vos données personnelles. Pour exercer ces droits,
-              contactez-nous à : contact@afhome-services.com
+              de rectification et de suppression des informations vous concernant transmises lors de nos échanges. Pour exercer ces droits,
+              contactez-nous directement via WhatsApp ou par email à : contact@afhome-services.com
             </p>
           </section>
 

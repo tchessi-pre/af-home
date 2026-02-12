@@ -30,11 +30,18 @@ const CGU = () => {
       <div className="container py-12">
         <div className="max-w-3xl mx-auto prose prose-slate">
           <section className="mb-10">
-            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Article 1 - Objet</h2>
+            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Article 1 - Objet et Identification</h2>
             <p className="text-muted-foreground leading-relaxed">
               Les présentes conditions générales de vente (CGV) régissent les relations contractuelles entre
-              AF HOME Services et ses clients dans le cadre des prestations de transport de marchandises
-              par voie maritime et aérienne entre la France et l'Afrique.
+              AF HOME SERVICES et ses clients.
+              <br /><br />
+              <strong>AF HOME SERVICES</strong><br />
+              Société à responsabilité limitée (SARL) au capital de 1 300 euros.<br />
+              Siège social : 36 Le Gué, 35530 SERVON-SUR-VILAINE.<br />
+              Gérant : Monsieur ALOWANOU Foly Fiacre.<br />
+              <br />
+              La société a pour objet principal : Groupage et transit de colisage vers l’import-export.
+              Elle propose également divers travaux de bricolage et généralement toutes opérations pouvant se rattacher à l'objet social.
             </p>
           </section>
 
@@ -49,6 +56,7 @@ const CGU = () => {
               <li>Expédition de véhicules</li>
               <li>Suivi de colis en temps réel</li>
               <li>Services de dédouanement</li>
+              <li>Divers travaux de bricolage</li>
             </ul>
           </section>
 
