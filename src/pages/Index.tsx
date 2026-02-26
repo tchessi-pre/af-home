@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PricingCalculator from "@/components/PricingCalculator";
 import WhyChooseUs from "@/components/WhyChooseUs";
-import TrackingSection from "@/components/TrackingSection";
+import Testimonials from "@/components/TrackingSection"; // Renommé implicitement via l'import
 import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -21,7 +21,7 @@ const Index = () => {
       <HeroSection onEstimateClick={scrollToCalculator} />
       <PricingCalculator ref={calculatorRef} />
       <WhyChooseUs />
-      <TrackingSection />
+      <Testimonials />
       <BookingForm />
       <Footer />
       <WhatsAppButton />

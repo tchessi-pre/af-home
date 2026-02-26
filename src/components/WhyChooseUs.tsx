@@ -9,8 +9,8 @@ const features = [
   },
   {
     icon: <MapPin className="w-8 h-8" />,
-    title: "Suivi en temps réel",
-    description: "Suivez votre colis à chaque étape de son voyage, de la France jusqu'à Lomé.",
+    title: "Service Proximité",
+    description: "Points de collecte et de retrait accessibles pour faciliter vos envois.",
   },
   {
     icon: <Clock className="w-8 h-8" />,

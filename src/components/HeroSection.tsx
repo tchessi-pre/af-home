@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Ship, ArrowRight, Plane, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import maritimeCargoShip from "@/assets/maritime-cargo-ship.jpg";
+import maritimeCargoShip from "@/assets/maritime-cargo-ship.webp";
 import aerialCargoPlane from "@/assets/aerial-cargo-plane.jpg";
 
 interface HeroSectionProps {
@@ -16,6 +16,14 @@ const nextDepartures = {
 
 const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
   const [activeMode, setActiveMode] = useState<"maritime" | "aerien">("maritime");
+
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById("booking");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative min-h-screen lg:min-h-[90vh] hero-gradient overflow-hidden pb-32 lg:pb-24">
@@ -45,7 +53,7 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
             {/* Subtitle */}
             <p className="text-base sm:text-lg md:text-xl text-primary-foreground/80 mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.2s' }}>
               Ligne directe <strong>France → Lomé</strong> et <strong>Lomé → France</strong>.
-              Transport maritime et aérien sécurisé, suivi en temps réel.
+              Transport maritime et aérien sécurisé.
             </p>
 
             {/* CTA Buttons */}
@@ -62,19 +70,22 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                 size="lg"
                 variant="outline"
                 className="bg-transparent border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground/50 text-base sm:text-lg px-6 sm:px-8 py-5 sm:py-6 rounded-xl font-semibold w-full sm:w-auto"
+                asChild
               >
-                Suivre mon colis
+                <a href="#booking" onClick={handleContactClick}>
+                  Nous contacter
+                </a>
               </Button>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-primary-foreground/20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="text-center sm:text-left">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary-foreground">500+</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary-foreground">100+</p>
                 <p className="text-xs sm:text-sm text-primary-foreground/60">Conteneurs expédiés</p>
               </div>
               <div className="text-center sm:text-left">
-                <p className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary-foreground">98%</p>
+                <p className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-primary-foreground">95%</p>
                 <p className="text-xs sm:text-sm text-primary-foreground/60">Clients satisfaits</p>
               </div>
               <div className="text-center sm:text-left">
@@ -97,7 +108,7 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                     }`}
                 >
                   <Ship className="w-4 h-4" />
-                  <span className="text-sm">Maritime</span>
+                  <span className="text-md">Maritime</span>
                 </button>
                 <button
                   onClick={() => setActiveMode("aerien")}

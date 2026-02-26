@@ -103,23 +103,7 @@ const CGU = () => {
           </section>
 
           <section className="mb-10">
-            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Article 7 - Assurance</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Une assurance optionnelle est proposée pour couvrir la valeur totale des marchandises expédiées.
-              Il est recommandé au client de souscrire cette assurance pour une protection maximale.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Article 8 - Réclamations</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Toute réclamation doit être formulée par écrit dans un délai de 7 jours suivant la réception
-              des marchandises. Passé ce délai, aucune réclamation ne sera acceptée.
-            </p>
-          </section>
-
-          <section className="mb-10">
-            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Article 9 - Droit applicable</h2>
+            <h2 className="text-xl font-display font-semibold text-foreground mb-4">Article 7 - Droit applicable</h2>
             <p className="text-muted-foreground leading-relaxed">
               Les présentes CGV sont soumises au droit français. En cas de litige, et à défaut de résolution amiable,
               les tribunaux de Paris seront seuls compétents.

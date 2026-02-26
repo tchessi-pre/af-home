@@ -55,15 +55,17 @@ const MentionsLegales = () => {
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">3. Hébergeur</h2>
             <p className="text-muted-foreground leading-relaxed">
               Ce site est hébergé par :<br />
-              <strong>xxxxx</strong><br />
-              [Adresse de l'hébergeur]
+              <strong>Vercel Inc.</strong><br />
+              440 N Barranca Ave #4133<br />
+              Covina, CA 91723<br />
+              États-Unis
             </p>
           </section>
 
           <section className="mb-10">
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">4. Contact</h2>
             <p className="text-muted-foreground leading-relaxed">
-              Email : contact@afhome-services.com<br />
+              Email : folowanou@gmail.com<br />
               Téléphone : {import.meta.env.VITE_PHONE_DISPLAY}
             </p>
           </section>
@@ -88,17 +90,17 @@ const MentionsLegales = () => {
               <br /><br />
               Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès,
               de rectification et de suppression des informations vous concernant transmises lors de nos échanges. Pour exercer ces droits,
-              contactez-nous directement via WhatsApp ou par email à : contact@afhome-services.com
+              contactez-nous directement via WhatsApp ou par email à : folowanou@gmail.com
             </p>
           </section>
 
-          <section className="mb-10">
+          {/* <section className="mb-10">
             <h2 className="text-xl font-display font-semibold text-foreground mb-4">7. Cookies</h2>
             <p className="text-muted-foreground leading-relaxed">
               Ce site utilise des cookies pour améliorer l'expérience utilisateur. En continuant à naviguer sur ce site,
               vous acceptez l'utilisation de cookies conformément à notre politique de confidentialité.
             </p>
-          </section>
+          </section> */}
 
           <p className="text-sm text-muted-foreground mt-12">
             Dernière mise à jour : Février 2025

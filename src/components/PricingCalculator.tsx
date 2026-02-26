@@ -163,6 +163,7 @@ const PricingCalculator = forwardRef<HTMLElement>((_, ref) => {
                     className="h-10 w-10 rounded-full border-border hover:border-accent hover:bg-accent hover:text-accent-foreground"
                     onClick={() => updateQuantity(item.id, -1)}
                     disabled={quantities[item.id] === 0}
+                    aria-label={`Diminuer la quantité de ${item.name}`}
                   >
                     <Minus className="w-4 h-4" />
                   </Button>
@@ -174,6 +175,7 @@ const PricingCalculator = forwardRef<HTMLElement>((_, ref) => {
                     size="icon"
                     className="h-10 w-10 rounded-full border-border hover:border-accent hover:bg-accent hover:text-accent-foreground"
                     onClick={() => updateQuantity(item.id, 1)}
+                    aria-label={`Augmenter la quantité de ${item.name}`}
                   >
                     <Plus className="w-4 h-4" />
                   </Button>

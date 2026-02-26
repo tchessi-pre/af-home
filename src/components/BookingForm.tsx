@@ -61,7 +61,7 @@ const BookingForm = () => {
       `📍 *Ville:* ${formData.city}\n` +
       `📦 *Marchandise:* ${formData.merchandise}\n` +
       `📅 *Date:* ${formData.date}`;
-    
+
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
 
     toast({
@@ -133,11 +133,12 @@ const BookingForm = () => {
             <form onSubmit={handleSubmit} className="space-y-5">
               {/* Name */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <User className="w-4 h-4 text-muted-foreground" />
+                <label htmlFor="name" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <User className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                   Nom complet
                 </label>
                 <Input
+                  id="name"
                   type="text"
                   placeholder="Jean Dupont"
                   value={formData.name}
@@ -148,11 +149,12 @@ const BookingForm = () => {
 
               {/* Phone */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Phone className="w-4 h-4 text-muted-foreground" />
+                <label htmlFor="phone" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Phone className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                   Téléphone
                 </label>
                 <Input
+                  id="phone"
                   type="tel"
                   placeholder="+33 6 12 34 56 78"
                   value={formData.phone}
@@ -163,15 +165,15 @@ const BookingForm = () => {
 
               {/* City */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-muted-foreground" />
+                <label htmlFor="city" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                   Ville de départ
                 </label>
                 <Select
                   value={formData.city}
                   onValueChange={(value) => setFormData({ ...formData, city: value })}
                 >
-                  <SelectTrigger className="h-12 bg-background border-border">
+                  <SelectTrigger id="city" className="h-12 bg-background border-border">
                     <SelectValue placeholder="Sélectionnez votre ville" />
                   </SelectTrigger>
                   <SelectContent>
@@ -186,15 +188,15 @@ const BookingForm = () => {
 
               {/* Merchandise Type */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Package className="w-4 h-4 text-muted-foreground" />
+                <label htmlFor="merchandise" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Package className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                   Type de marchandise
                 </label>
                 <Select
                   value={formData.merchandise}
                   onValueChange={(value) => setFormData({ ...formData, merchandise: value })}
                 >
-                  <SelectTrigger className="h-12 bg-background border-border">
+                  <SelectTrigger id="merchandise" className="h-12 bg-background border-border">
                     <SelectValue placeholder="Que souhaitez-vous envoyer ?" />
                   </SelectTrigger>
                   <SelectContent>
@@ -209,11 +211,12 @@ const BookingForm = () => {
 
               {/* Date */}
               <div className="space-y-2">
-                <label className="text-sm font-medium text-foreground flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-muted-foreground" />
+                <label htmlFor="date" className="text-sm font-medium text-foreground flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-muted-foreground" aria-hidden="true" />
                   Date souhaitée de dépôt
                 </label>
                 <Input
+                  id="date"
                   type="date"
                   value={formData.date}
                   onChange={(e) => setFormData({ ...formData, date: e.target.value })}

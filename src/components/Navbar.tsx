@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Ship, Menu, X, Plane } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -6,13 +6,14 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const lastSectionRef = useRef(""); // Track last section to avoid redundant updates
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
       // Detect active section
-      const sections = ["calculator", "why-us", "tracking", "booking"];
+      const sections = ["calculator", "why-us", "testimonials", "booking"];
       let currentSection = "";
 
       for (const section of sections) {
@@ -26,11 +27,21 @@ const Navbar = () => {
         }
       }
 
-      setActiveSection(currentSection);
+      // Only update state and history if section changes
+      if (currentSection !== lastSectionRef.current) {
+        lastSectionRef.current = currentSection;
+        setActiveSection(currentSection);
 
-      if (currentSection) {
-        window.history.replaceState(null, "", `#${currentSection}`);
-      } else if (window.scrollY < 100) {
+        if (currentSection) {
+          window.history.replaceState(null, "", `#${currentSection}`);
+        } else if (window.scrollY < 100) {
+          // Only clear hash if we are at the very top
+          window.history.replaceState(null, "", window.location.pathname);
+        }
+      } else if (!currentSection && window.scrollY < 100 && lastSectionRef.current !== "") {
+        // Handle case where we scroll back to top from a section
+        lastSectionRef.current = "";
+        setActiveSection("");
         window.history.replaceState(null, "", window.location.pathname);
       }
     };
@@ -42,7 +53,7 @@ const Navbar = () => {
   const navLinks = [
     { label: "Accueil", href: "#", section: "" },
     { label: "Tarifs", href: "#calculator", section: "calculator" },
-    { label: "Suivi", href: "#tracking", section: "tracking" },
+    { label: "Témoignages", href: "#testimonials", section: "testimonials" },
     { label: "Pourquoi nous", href: "#why-us", section: "why-us" },
   ];
 
@@ -114,12 +125,11 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={`tel:+${import.meta.env.VITE_WHATSAPP_NUMBER}`}
-              className={`text-sm font-medium transition-colors ${isScrolled ? "text-primary/70 hover:text-primary" : "text-primary-foreground/70 hover:text-primary-foreground"}`}
+            <span
+              className={`text-sm font-medium transition-colors ${isScrolled ? "text-primary/70" : "text-primary-foreground/70"}`}
             >
               {import.meta.env.VITE_PHONE_DISPLAY}
-            </a>
+            </span>
             <Button
               asChild
               className="btn-gradient-orange text-white border-0 font-semibold rounded-xl px-6 hover:scale-105 transition-transform"
@@ -163,12 +173,11 @@ const Navbar = () => {
                 </a>
               ))}
               <div className={`pt-2 mt-2 border-t ${isScrolled ? "border-primary/10" : "border-primary-foreground/10"}`}>
-                <a
-                  href={`tel:+${import.meta.env.VITE_WHATSAPP_NUMBER}`}
+                <span
                   className={`block px-4 py-3 text-base font-medium ${isScrolled ? "text-primary/70" : "text-primary-foreground/70"}`}
                 >
                   📞 {import.meta.env.VITE_PHONE_DISPLAY}
-                </a>
+                </span>
                 <Button
                   asChild
                   className="w-full btn-gradient-orange text-white border-0 font-semibold rounded-xl mt-2"
