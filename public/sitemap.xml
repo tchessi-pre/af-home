@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://afhomeservices.com/</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://af-home-services.vercel.app//</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://afhomeservices.com/mentions-legales</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://af-home-services.vercel.app/mentions-legales</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://afhomeservices.com/cgu</loc>
-    <lastmod>2026-02-26</lastmod>
+    <loc>https://af-home-services.vercel.app/cgu</loc>
+    <lastmod>2026-03-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -10,8 +10,8 @@ interface HeroSectionProps {
 
 // Prochains départs (à mettre à jour régulièrement)
 const nextDepartures = {
-  maritime: { date: "15 Février 2026", destination: "Lomé", delai: "15-20 jours" },
-  aerien: { date: "Départs quotidiens", destination: "France / Belgique / Suisse", delai: "48h - 72h" },
+  maritime: { date: "20 Mars 2026", destination: "Lomé", delai: "15-20 jours" },
+  aerien: { date: "Non précisée", destination: "France / Belgique / Suisse", delai: "48h - 72h" },
 };
 
 const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
@@ -162,31 +162,32 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                           Conteneurs sécurisés pour vos marchandises volumineuses
                         </p>
                       </div>
-                      <div className="w-full bg-black/50 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
-                          <span className="text-white font-semibold text-sm sm:text-base">
+                      <div className="w-full bg-black/60 backdrop-blur-md rounded-xl p-5 border border-white/20 shadow-2xl">
+                        <div className="flex items-center justify-center gap-2 mb-4">
+                          <Calendar className="w-5 h-5 text-accent" />
+                          <span className="text-white/90 font-medium uppercase tracking-wider text-xs sm:text-sm">
                             Prochain départ
                           </span>
                         </div>
-                        <div className="space-y-2">
-                          <div className="flex justify-between items-center">
-                            <span className="text-white/70 text-xs sm:text-sm">Date:</span>
-                            <span className="text-white font-bold text-sm sm:text-base">
-                              {nextDepartures.maritime.date}
-                            </span>
+
+                        <div className="text-center mb-6">
+                          <div className="inline-block bg-accent text-white font-bold text-2xl sm:text-3xl px-6 py-3 rounded-lg shadow-orange transform hover:scale-105 transition-transform duration-300">
+                            {nextDepartures.maritime.date}
                           </div>
+                        </div>
+
+                        <div className="space-y-3 pt-4 border-t border-white/10">
                           <div className="flex justify-between items-center">
-                            <span className="text-white/70 text-xs sm:text-sm">Destination:</span>
-                            <span className="text-white font-semibold text-sm sm:text-base">
+                            <span className="text-white/70 text-sm">Destination:</span>
+                            <span className="text-white font-semibold text-base">
                               {nextDepartures.maritime.destination}
                             </span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-white/70 text-xs sm:text-sm">Délai:</span>
-                            <div className="flex items-center gap-1">
-                              <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-accent" />
-                              <span className="text-white font-semibold text-sm sm:text-base">
+                            <span className="text-white/70 text-sm">Délai:</span>
+                            <div className="flex items-center gap-1.5 text-accent">
+                              <Clock className="w-4 h-4" />
+                              <span className="font-semibold text-base">
                                 {nextDepartures.maritime.delai}
                               </span>
                             </div>
@@ -227,31 +228,30 @@ const HeroSection = ({ onEstimateClick }: HeroSectionProps) => {
                           <span className="text-accent font-bold">Colis Express Lomé → France (48h)</span>
                         </p>
                       </div>
-                      <div className="w-full bg-black/50 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-accent" />
-                          <span className="text-white font-semibold text-sm sm:text-base">
+                      <div className="w-full bg-black/60 backdrop-blur-md rounded-xl p-5 border border-white/20 shadow-2xl">
+                        <div className="flex items-center justify-center gap-2 mb-4">
+                          <Calendar className="w-5 h-5 text-accent" />
+                          <span className="text-white/90 font-medium uppercase tracking-wider text-xs sm:text-sm">
                             Prochain départ
                           </span>
                         </div>
-                        <div className="space-y-2">
-                          <div className="flex justify-between items-center">
-                            <span className="text-white/70 text-xs sm:text-sm">Date:</span>
-                            <span className="text-white font-bold text-sm sm:text-base">
-                              {nextDepartures.aerien.date}
-                            </span>
+                        <div className="text-center mb-6">
+                          <div className="inline-block bg-accent text-white font-bold text-lg sm:text-xl px-4 py-3 rounded-lg shadow-orange transform hover:scale-105 transition-transform duration-300">
+                            {nextDepartures.aerien.date}
                           </div>
+                        </div>
+                        <div className="space-y-3 pt-4 border-t border-white/10">
                           <div className="flex justify-between items-center">
-                            <span className="text-white/70 text-xs sm:text-sm">Destination:</span>
-                            <span className="text-white font-semibold text-sm sm:text-base">
+                            <span className="text-white/70 text-sm">Destination:</span>
+                            <span className="text-white font-semibold text-sm sm:text-base max-w-[150px] truncate text-right">
                               {nextDepartures.aerien.destination}
                             </span>
                           </div>
                           <div className="flex justify-between items-center">
-                            <span className="text-white/70 text-xs sm:text-sm">Délai:</span>
-                            <div className="flex items-center gap-1">
-                              <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-accent" />
-                              <span className="text-white font-semibold text-sm sm:text-base">
+                            <span className="text-white/70 text-sm">Délai:</span>
+                            <div className="flex items-center gap-1.5 text-accent">
+                              <Clock className="w-4 h-4" />
+                              <span className="font-semibold text-base">
                                 {nextDepartures.aerien.delai}
                               </span>
                             </div>

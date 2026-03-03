@@ -98,10 +98,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-primary-foreground/50">
+          <p className="text-sm text-white-foreground/50">
             © 2025 AF HOME Services. Tous droits réservés.
           </p>
-          <div className="flex gap-6 text-sm text-primary-foreground/50">
+          <div className="flex gap-6 text-sm text-white-foreground/50">
             <Link to="/mentions-legales" className="hover:text-accent transition-colors">Mentions légales</Link>
             <Link to="/cgu" className="hover:text-accent transition-colors">CGV</Link>
           </div>
