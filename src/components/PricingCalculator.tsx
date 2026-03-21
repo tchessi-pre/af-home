@@ -45,14 +45,14 @@ const items: Item[] = [
     name: "Carton",
     price: 100,
     icon: <Package className="w-8 h-8" />,
-    description: "Pack 2 cartons : 180€ (économisez 20€)",
+    description: "A partir de 5 cartons : 450€ (économisez 50€)",
   },
 ];
 
 const PricingCalculator = forwardRef<HTMLElement>((_, ref) => {
   const [activeTab, setActiveTab] = useState("maritime");
   const [airWeight, setAirWeight] = useState<string>("");
-  
+
   const [quantities, setQuantities] = useState<Record<string, number>>({
     fut: 0,
     valise: 0,
@@ -81,11 +81,11 @@ const PricingCalculator = forwardRef<HTMLElement>((_, ref) => {
     // Valises
     total += quantities.valise * 50;
 
-    // Cartons avec réduction pour 2+
+    // Cartons : -50€ à partir de 5 cartons (pack de 5 à 450€)
     const cartonCount = quantities.carton;
-    const packs = Math.floor(cartonCount / 2);
-    const singles = cartonCount % 2;
-    total += packs * 180 + singles * 100;
+    const packs = Math.floor(cartonCount / 5);
+    const singles = cartonCount % 5;
+    total += packs * 450 + singles * 100;
 
     return total;
   };
@@ -104,8 +104,8 @@ const PricingCalculator = forwardRef<HTMLElement>((_, ref) => {
 
   const getCartonSavings = () => {
     const cartonCount = quantities.carton;
-    const packs = Math.floor(cartonCount / 2);
-    return packs * 20;
+    const packs = Math.floor(cartonCount / 5);
+    return packs * 50;
   };
 
   const maritimeTotal = calculateMaritimeTotal();
@@ -129,7 +129,7 @@ const PricingCalculator = forwardRef<HTMLElement>((_, ref) => {
       if (quantities.fut > 0) message += `🛢️ *Fûts (200L):* ${quantities.fut}\n`;
       if (quantities.valise > 0) message += `🧳 *Valises:* ${quantities.valise}\n`;
       if (quantities.carton > 0) message += `📦 *Cartons:* ${quantities.carton}\n`;
-      
+
       // Add total
       message += `\n💰 *Total estimé:* ${maritimeTotal}€`;
       if (savings > 0) {
