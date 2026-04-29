@@ -10,7 +10,7 @@ interface HeroSectionProps {
 
 // Prochains départs (à mettre à jour régulièrement)
 const nextDepartures = {
-  maritime: { date: "28 Avril 2026", destination: "Lomé", delai: "15-20 jours" },
+  maritime: { date: "20 Mai 2026", destination: "Lomé", delai: "15-20 jours" },
   aerien: { date: "Non précisée", destination: "France / Belgique / Suisse", delai: "48h - 72h" },
 };
 
